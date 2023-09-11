@@ -1,24 +1,18 @@
-import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import { Button } from './stories/button/Button';
+import Textfield from './stories/textField/Textfield';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="App" style={{display:'flex', flexDirection: 'column', gap: '16px'}}>
+      <div style={{fontSize:'30px'}}>
+        Here are 2 basic component that i have created in storybook
+      </div>
+      <div>
+        To view storybook run <strong>"npm run storybook"</strong>
+      </div>
+      <Textfield label='Name' placeholder='Enter your name' handleChange={(e)=>{console.log(e)}} />
+      <Button label='Click me' backgroundColor='red' size='large' onClick={()=>{console.log('button clicked')}}/>
     </div>
   );
 }
